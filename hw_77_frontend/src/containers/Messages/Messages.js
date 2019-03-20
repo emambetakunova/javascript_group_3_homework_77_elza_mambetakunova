@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import {fetchMessages} from "../../store/actions/messagesAction";
+import {NotificationContainer} from 'react-notifications';
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 import MessageThumbnail from "../../components/MessageThumbnail/MessageThumbnail";
@@ -30,6 +31,7 @@ class Messages extends Component {
                             <span><strong>Author: </strong>{message.author}</span>
                         </div>
                     ))}
+                    <NotificationContainer/>
                 </div>
             </Fragment>
         );
