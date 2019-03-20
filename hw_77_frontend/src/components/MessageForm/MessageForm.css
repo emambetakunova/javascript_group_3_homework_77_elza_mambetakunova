@@ -1,0 +1,30 @@
+.MessageForm {
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.MessageForm input,
+.MessageForm button
+{
+    display: block;
+    margin: 15px auto;
+    padding: 10px;
+}
+
+.Input {
+    width: 86%;
+    border: 1px solid #61dafb;
+}
+
+.MessageForm button {
+    background: #61dafb;
+    border: transparent;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    font-weight: bold;
+}

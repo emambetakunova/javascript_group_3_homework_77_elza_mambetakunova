@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 
-class ProductForm extends Component {
+import './MessageForm.css'
+
+class MessageForm extends Component {
     state = {
         message: '',
-        author: ''
+        author: '',
+        image: ''
     };
 
     submitFormHandler = event => {
@@ -14,7 +17,7 @@ class ProductForm extends Component {
             formData.append(key, this.state[key]);
         });
 
-        this.props.onSubmit({formData})
+        this.props.onSubmit(formData)
     };
 
     inputChangeHandler = event => {
@@ -29,34 +32,35 @@ class ProductForm extends Component {
         })
     };
 
-
     render() {
         return (
-            <form onSubmit={this.submitFormHandler}>
+            <form onSubmit={this.submitFormHandler} className="MessageForm">
                 <input
                     type="text" required
                     name="message" id="message"
                     placeholder="Enter message"
                     value={this.state.message}
                     onChange={this.inputChangeHandler}
+                    className="Input"
                 />
                 <input
-                    type="text" required min="0"
+                    type="text"
                     name="author" id="author"
                     placeholder="Enter author"
                     value={this.state.author}
                     onChange={this.inputChangeHandler}
+                    className="Input"
                 />
                 <input
-                    type="file" required
+                    type="file"
                     name="image" id="image"
                     onChange={this.fileChangeHandler}
                 />
-                <button type="submit" color="primary">Save</button>
+                <button type="submit">Save</button>
             </form>
 
         );
     }
 }
 
-export default ProductForm;
+export default MessageForm;
