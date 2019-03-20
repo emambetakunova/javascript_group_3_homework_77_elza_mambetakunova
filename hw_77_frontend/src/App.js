@@ -1,6 +1,6 @@
-import React, {Component, Fragment} from 'react';
-import Switch from "react-router-dom/es/Switch";
-import Route from "react-router-dom/es/Route";
+import React, {Component} from 'react';
+import {Switch, Route} from "react-router-dom";
+import Layout from "./components/Layout/Layout";
 import Messages from "./containers/Messages/Messages";
 import NewMessage from "./containers/NewMessage/NewMessage";
 
@@ -8,12 +8,12 @@ import NewMessage from "./containers/NewMessage/NewMessage";
 class App extends Component {
     render() {
         return (
-            <Fragment>
+            <Layout>
                 <Switch>
                     <Route path="/" exact component={Messages}/>
                     <Route path="/messages/new" exact component={NewMessage}/>
                 </Switch>
-            </Fragment>
+            </Layout>
         );
     }
 }
