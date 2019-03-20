@@ -1,0 +1,24 @@
+.MainNav {
+    text-align: right;
+    background: #61dafb;
+    font-weight: bold;
+}
+.Logo{
+    float: left;
+    margin-left: 50px;
+    color: #000000;
+}
+.NavLink {
+    display: inline-block;
+    padding: 10px;
+    margin: 10px 20px;
+    text-decoration: none;
+    color: #000;
+}
+.NavLink:hover {
+    color: white;
+}
+.Active{
+    font-weight: bold;
+    color: white;
+}
