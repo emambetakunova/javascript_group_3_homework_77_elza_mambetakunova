@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {createStore, applyMiddleware, compose, combineReducers} from 'redux';
+import 'react-notifications/lib/notifications.css';
 import {Provider} from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import {BrowserRouter} from 'react-router-dom';
