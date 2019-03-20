@@ -1,4 +1,4 @@
-const multer  = require('multer');
+const multer = require('multer');
 const path = require('path');
 const config = require('../config');
 const express = require('express');
@@ -24,12 +24,19 @@ router.get('/', (req, res) => {
 
 router.post('/', upload.single('image'), (req, res) => {
     const message = req.body;
-    if(req.file){
+    if (req.file) {
         message.image = req.file.filename;
     }
-    message.id = nanoid();
-    fileDb.addItem(message);
-    res.send({message: "Ok"});
+    if (req.body.author === '') {
+        message.author = 'Anonymous'
+    }
+    if (req.body.message === '' || !req.body.message) {
+        res.status(400).send({message: 'Please, enter message!'});
+    } else {
+        message.id = nanoid();
+        fileDb.addItem(message);
+        res.send({message: "Message sent successfully"});
+    }
 });
 
 module.exports = router;
