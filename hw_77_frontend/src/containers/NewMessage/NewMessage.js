@@ -1,7 +1,9 @@
-import React, {Component, Fragment} from 'react';
-import ProductForm from "../../components/MessageForm/MessageForm";
+import React, {Component} from 'react';
+import MessageForm from "../../components/MessageForm/MessageForm";
 import {connect} from "react-redux";
 import {createMessage} from "../../store/actions/messagesAction";
+
+import './NewMessage.css'
 
 class NewMessage extends Component {
 
@@ -13,10 +15,10 @@ class NewMessage extends Component {
 
     render() {
         return (
-            <Fragment>
+            <div className="NewMessage">
                 <h2>New message</h2>
-                <ProductForm onSubmit={this.createMessage}/>
-            </Fragment>
+                <MessageForm onSubmit={this.createMessage}/>
+            </div>
         );
     }
 }
