@@ -4,6 +4,8 @@ import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 import MessageThumbnail from "../../components/MessageThumbnail/MessageThumbnail";
 
+import './Messages.css'
+
 
 class Messages extends Component {
 
@@ -14,19 +16,21 @@ class Messages extends Component {
     render() {
         return (
             <Fragment>
-                <h2>
-                    Messages
-                    <Link to='/messages/new'>
-                        <button className="AddMessage">Add message</button>
-                    </Link>
-                </h2>
-                {this.props.messages.map(message => (
-                    <div key={message.id}>
-                        <MessageThumbnail image={message.image}/>
-                        <p>{message.message}</p>
-                        <strong>{message.author}</strong>
+                <div className="Wrapper">
+                    <div className="TitleAddMessage">
+                        <h2>Messages</h2>
+                        <Link to='/messages/new'>
+                            <button className="ButtonAddMessage">Add message</button>
+                        </Link>
                     </div>
-                ))}
+                    {this.props.messages.map(message => (
+                        <div key={message.id} className="AllMessages">
+                            <MessageThumbnail image={message.image}/>
+                            <span><strong>Message: </strong>{message.message}</span>
+                            <span><strong>Author: </strong>{message.author}</span>
+                        </div>
+                    ))}
+                </div>
             </Fragment>
         );
     }
